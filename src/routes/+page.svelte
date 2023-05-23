@@ -1,16 +1,21 @@
-<h1>hellafraiche</h1>
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
 
-<h2 class="ukemeny">Ukemeny</h2>
-<ul>
-    <li>Spaghetti</li>
-    <li>Matfløte</li>
-    <li>Soltørkede Tomater i Olje</li>
-    <li>Sjampinjong</li>
-    <li>Spinat</li>
-    <li>300g kyllinglårfillet</li>
-    <li>Rødløk</li>
-    <li>4-6 Poteter</li>
-    <li>Creme Fraiche</li>
-    <li>Cherrytomater</li>
-    <li>Agurk</li>
-</ul>
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">HELLOFRAICHE</h1>
+        <p class="mb-8 text-lg font-normal text-gray-800 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Bestill ukemenyen direkte fra butikken, ingen mellomledd </p>
+
+
+        <div>
+            <img class="flex m-auto max-w-xs" src="https://www.seekpng.com/png/full/167-1677409_crme-frache-sour-cream-transparent-background.png" alt="">
+        </div>
+        <a href="/info">
+        <div class="flex"> 
+            
+                <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
+                    Slik fungerer det
+                </button>
+             
+        </div>
+    </a>   
+    </div>
+</section>
