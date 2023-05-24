@@ -15,7 +15,10 @@
         Checkbox 
     } from "flowbite-svelte";
 
-
+    // Retrieve the recipes from the data.
+    $: ({ mealplans } = data);
+    export let data;
+    console.log(data)
 
     let count = 2
     let currentPlan = 1
@@ -37,91 +40,6 @@
         }
 	}
 
-    let meny = [
-        {
-            dish: "Kremet Spaghetti",
-            subtitle: "med sjampinjong og soltørkede tomater",
-            recipeUrl: "/plans/1/recipes/kremet-spaghetti",
-        },
-        {
-            dish: "Kylling",
-            subtitle: "med frisk salat og ovnsbakte poteter",
-            recipeUrl: "/plans/1/recipes/kylling",
-        },
-        {
-            dish: "Sjampinjong-Stroganoff",
-            subtitle: "med soyasaus og fløte",
-            recipeUrl: "/plans/1/recipes/sjampinjong-stroganoff",
-        },
-        {
-            dish: "Toskansk Kylling",
-            subtitle: "med spinat og soltørkede tomater",
-            recipeUrl: "/plans/1/recipes/toskansk-kylling",
-        },
-    ];
-
-    let ingredients = [
-        {
-            name: "Rødløk 🧅",
-            amount: 0.5,
-            measurement: "stk"
-        },
-        {
-            name: "Agurk 🥒",
-            amount: 0.5,
-            measurement: "stk"
-        },
-        {
-            name: "Poteter 🥔",
-            amount: 3,
-            measurement: "stk"
-        },
-        {
-            name: "Spagetti 🌾",
-            amount: 250,
-            measurement: "g"
-        },
-        {
-            name: "Spagetti 🌾",
-            amount: 250,
-            measurement: "g"
-        },
-        {
-            name: "Spinat 🥬",
-            amount: 100,
-            measurement: "g"
-        },
-        {
-            name: "Creme Fraiche 🥛",
-            amount: 1.5,
-            measurement: "dl"
-        },
-        {
-            name: "Matfløte 🥛",
-            amount: 1.5,
-            measurement: "dl"
-        },
-        {
-            name: "Soltørkede Tomater 🍅",
-            amount: 100,
-            measurement: "g"
-        },
-        {
-            name: "Cherry Tomater 🍅",
-            amount: 150,
-            measurement: "g"
-        },
-        {
-            name: "Sjampinjong 🍄",
-            amount: 125,
-            measurement: "g"
-        },
-        {
-            name: "Kyllingfilet strimlet 🐓",
-            amount: 150,
-            measurement: "g"
-        },
-    ];
 
     const handleMeasurementConversion = (amount, measurement) => {
         let convertedMeasurement = {amount: amount, measurement: measurement}
@@ -143,10 +61,12 @@
 
         return `${amount} ${measurement}`
     } 
+
+
 </script>
 
 
-<h1 class="text-5xl text-center pt-16 pb-5">Ukemenyer</h1>
+<h1 class="text-5xl text-center pt-16 pb-5">{mealplans[0].name}</h1>
 
 <div class="flex justify-center">
     <h2 class="text-xl text-left p-5 max-w-md"> Benytt deg av pilene og + / - knappene under for å velge mellom menyer og antall personer for å justere handlelisten. </h2>
@@ -166,7 +86,7 @@
             </div>
           
             <Listgroup
-                items={meny}
+                items={mealplans[0].dishes}
                 let:item
                 class="border-0 dark:!bg-transparent pt-5">
                 <div class="flex items-center space-x-4">
@@ -204,9 +124,11 @@
 
             </div>
 
-            <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
-                {parseFloat((price * count).toFixed(2))} kr hos Meny
-            </button>
+            <a class="items-center self-center" target="_blank" href="{mealplans[0].menyUrl}">
+                <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
+                    {parseFloat((price * count).toFixed(2))} kr hos Meny
+                </button>
+            </a>
 
         </Card>
 
@@ -214,14 +136,14 @@
             <h5 class="text-md font-bold text-center leading-none text-gray-900 dark:text-white pb-5">
                 Handleliste 🛒
             </h5>            
-            <Listgroup items={ingredients} let:item class="border-0 dark:!bg-transparent">
+            <Listgroup items={mealplans[0].ingredients} let:item class="border-0 dark:!bg-transparent">
                 {item.name} 
                 <div class="">
                     <Checkbox class="m-2 checked:bg-slate-900 outline-black"/> {item.amount * count}{item.measurement} 
                 </div>
             </Listgroup>
             <br>    
-         </Card>
+        </Card>
 
 </div>
 

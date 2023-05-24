@@ -34,23 +34,32 @@
     {#each recipes as item}
     <Card class="border-none shadow-none" padding="sm">
         <div class="flex justify-end">
-          <MenuButton />
-          <Dropdown class="w-36 ">
-                <DropdownItem class="flex justify-between">Del <Share class="inline-flex w-4"/></DropdownItem> 
-                <DropdownItem class="flex justify-between">Lagre <Bookmark class="inline-flex w-4"/></DropdownItem>
-          </Dropdown>
+
         </div>
         <div class="flex flex-col items-center pb-4">
-        
           <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{item.dish}</h5>
           <span class="text-sm text-gray-500 dark:text-gray-400">{item.subtitle}</span>
           <div class="flex mt-4 space-x-3 lg:mt-6">
-
             <a href="recipes/{item.dish}">
-            <Button color="light" class="dark:text-white">Se Oppskrift</Button></a>
+              <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
+                Se Oppskrift
+             </button>
+            </a>
           </div>
+
+
+
         </div>
       </Card>
     {/each}
 
 </div>
+
+
+<style>
+    button:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+</style>
