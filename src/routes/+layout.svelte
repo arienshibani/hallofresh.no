@@ -18,8 +18,7 @@
     <NavUl {hidden}>
       <NavLi href="/plans">Ukemenyer</NavLi>
       <NavLi href="/info">Slik fungerer det</NavLi>
-      <NavLi href="/plans/recipes">Oppskrifter</NavLi>
-      <NavLi href="/recipes">Butikker</NavLi>
+      <NavLi href="/recipes">Oppskrifter</NavLi>
     </NavUl>
   </Navbar>
 

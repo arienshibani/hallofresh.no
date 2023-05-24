@@ -1,9 +1,24 @@
 <script>
     // @ts-nocheck
+    import {
+        ArrowRight,
+        ArrowLeftCircle,
+        ArrowRightCircle,
+        PlusCircle,
+        MinusCircle,
+    } from 'svelte-heros-v2';
 
-    import { Card, Listgroup, Avatar, Checkbox } from "flowbite-svelte";
+
+    import { 
+        Card, 
+        Listgroup, 
+        Checkbox 
+    } from "flowbite-svelte";
+
+
 
     let count = 2
+    let currentPlan = 1
     let price = 136.42
 
     function handlePlus() {
@@ -62,19 +77,29 @@
             measurement: "stk"
         },
         {
-            name: "Spagetti 🍝",
+            name: "Spagetti 🌾",
             amount: 250,
             measurement: "g"
+        },
+        {
+            name: "Spagetti 🌾",
+            amount: 250,
+            measurement: "g"
+        },
+        {
+            name: "Spinat 🥬",
+            amount: 100,
+            measurement: "g"
+        },
+        {
+            name: "Creme Fraiche 🥛",
+            amount: 1.5,
+            measurement: "dl"
         },
         {
             name: "Matfløte 🥛",
             amount: 1.5,
             measurement: "dl"
-        },
-        {
-            name: "Creme Fraiche 🥛",
-            amount: 150,
-            measurement: "g"
         },
         {
             name: "Soltørkede Tomater 🍅",
@@ -92,7 +117,7 @@
             measurement: "g"
         },
         {
-            name: "Kyllinglårfilet 🐓",
+            name: "Kyllingfilet strimlet 🐓",
             amount: 150,
             measurement: "g"
         },
@@ -120,32 +145,33 @@
     } 
 </script>
 
-<div class="flex" />
-<h5 class="text-xl font-bold text-center pt-16">
-    Ukemeny #1 🍝🐓🥬
-</h5>
-<div class="grid mainContent gap-10 p-20">
+
+<h1 class="text-5xl text-center pt-16 pb-5">Ukemenyer</h1>
+
+<div class="flex justify-center">
+    <h2 class="text-xl text-left p-5 max-w-md"> Benytt deg av pilene og + / - knappene under for å velge mellom menyer og antall personer for å justere handlelisten. </h2>
+</div>
 
 
-
-         <Card class="h-max justify-self-end">
-            <h5 class="text-md text-center font-bold leading-none text-gray-900 dark:text-white pb-5">
-                4 Middager
-            </h5>
-
-            <div class="self-center pb-10">
-                <button class="border-2 rounded-full w-[1.8rem]" on:click={handleMinus}>-</button> 
-                <span class="p-10"> {count} {count === 1 ? "Person" : "Personer"} </span> 
-                <button class="border-2 rounded-full w-[1.9rem]" on:click={handlePlus}>+</button> 
+<div class="grid mainContent gap-x-60 p-10">
+         <Card class="h-max justify-self-end border-none shadow-none">
+            <div class="flex justify-evenly">
+                <button class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
+                     <ArrowLeftCircle class="inline"/>
+                </button>
+                <h2 class="text-2xl text-center text-gray-900">Italiensk Uke</h2>
+                <button class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
+                    <ArrowRightCircle class="inline"/>
+                </button>
             </div>
-
+          
             <Listgroup
                 items={meny}
                 let:item
-                class="border-0 dark:!bg-transparent">
+                class="border-0 dark:!bg-transparent pt-5">
                 <div class="flex items-center space-x-4">
                     <div class="flex-1 min-w-0">
-                        <a href={item.recipeUrl}>
+                        <a href="recipes/{item.dish}">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{item.dish}</p>
                         </a>
                        
@@ -156,29 +182,47 @@
                 </div>
             </Listgroup>
 
+
+            <p class="text-center text-gray-900 mt-8">Antall Personer</p>
+
+            <div class="flex justify-evenly">
+                <button on:click={handleMinus}>  
+                    <MinusCircle/>
+                </button> 
+                <span class=""> {count} {count === 1 ? "Person" : "Personer"} </span> 
+                <button on:click={handlePlus}>
+                    <PlusCircle/>
+                </button> 
+            </div>
+
+            <h1 class="text-xl text-center pt-16 text-gray-950">Prisoverslag</h1>
+
+
+            <div class="flex justify-center">
+                <h2 class="text-xs text-left pt-5 pb-5 max-w-content"> Trykk på prisoverslaget for å gå videre til leverandøren. Handlelisten din vil være ferdig utfyllt med alle varene for 2 personer. Prisoverslaget kan fravike ifra virkeligheten.</h2>
+            
+
+            </div>
+
             <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
                 {parseFloat((price * count).toFixed(2))} kr hos Meny
             </button>
+
         </Card>
 
-        <Card class="lastColumn h-max ">
+        <Card class="lastColumn h-max shadow-none rounded-sm">
             <h5 class="text-md font-bold text-center leading-none text-gray-900 dark:text-white pb-5">
                 Handleliste 🛒
             </h5>            
-
             <Listgroup items={ingredients} let:item class="border-0 dark:!bg-transparent">
-                {item.name}
-                <div class="inline-flex items-centertext-sm font-medium " >
-                    {item.amount * count}{item.measurement}
+                {item.name} 
+                <div class="">
+                    <Checkbox class="m-2 checked:bg-slate-900 outline-black"/> {item.amount * count}{item.measurement} 
                 </div>
             </Listgroup>
-
-            <br>
-
-    
+            <br>    
          </Card>
 
-   
 </div>
 
 

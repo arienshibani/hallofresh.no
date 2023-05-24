@@ -1,3 +1,9 @@
+<script>
+    import {
+        ArrowRight
+    } from 'svelte-heros-v2';
+  </script>
+
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
 
@@ -11,11 +17,21 @@
         <a href="/info">
         <div class="flex"> 
             
-                <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
-                    Slik fungerer det
-                </button>
-             
+            <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
+                Slik fungerer det  <ArrowRight class="inline"/>
+            </button>
+        
+            
         </div>
     </a>   
     </div>
 </section>
+
+<style>
+      button:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+</style>
