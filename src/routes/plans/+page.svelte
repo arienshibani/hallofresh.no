@@ -1,7 +1,7 @@
 <script>
     // @ts-nocheck
 
-    import { Card, Listgroup, Avatar, Button } from "flowbite-svelte";
+    import { Card, Listgroup, Avatar, Checkbox } from "flowbite-svelte";
 
     let count = 2
     let price = 136.42
@@ -47,53 +47,52 @@
 
     let ingredients = [
         {
-            name: "Rødløk",
+            name: "Rødløk 🧅",
             amount: 0.5,
             measurement: "stk"
         },
         {
-            name: "Agurk",
+            name: "Agurk 🥒",
             amount: 0.5,
             measurement: "stk"
         },
         {
-            name: "Poteter",
+            name: "Poteter 🥔",
             amount: 3,
             measurement: "stk"
         },
         {
-            name: "Spagetti",
+            name: "Spagetti 🍝",
             amount: 250,
             measurement: "g"
         },
         {
-            name: "Matfløte",
+            name: "Matfløte 🥛",
             amount: 1.5,
             measurement: "dl"
         },
         {
-            name: "Soltørkede Tomater",
+            name: "Creme Fraiche 🥛",
+            amount: 150,
+            measurement: "g"
+        },
+        {
+            name: "Soltørkede Tomater 🍅",
             amount: 100,
             measurement: "g"
         },
         {
-            name: "Sjampinjong",
+            name: "Cherry Tomater 🍅",
+            amount: 150,
+            measurement: "g"
+        },
+        {
+            name: "Sjampinjong 🍄",
             amount: 125,
             measurement: "g"
         },
         {
-            name: "Kyllinglårfilet",
-            amount: 150,
-            measurement: "g"
-        },
-
-        {
-            name: "Creme Fraiche",
-            amount: 150,
-            measurement: "g"
-        },
-        {
-            name: "Cherry Tomater",
+            name: "Kyllinglårfilet 🐓",
             amount: 150,
             measurement: "g"
         },
@@ -122,15 +121,23 @@
 </script>
 
 <div class="flex" />
-
+<h5 class="text-xl font-bold text-center pt-16">
+    Ukemeny #1 🍝🐓🥬
+</h5>
 <div class="grid mainContent gap-10 p-20">
 
 
+
          <Card class="h-max justify-self-end">
-            <h5 class="text-md font-bold leading-none text-gray-900 dark:text-white pb-5">
-                Middager 🍝
+            <h5 class="text-md text-center font-bold leading-none text-gray-900 dark:text-white pb-5">
+                4 Middager
             </h5>
 
+            <div class="self-center pb-10">
+                <button class="border-2 rounded-full w-[1.8rem]" on:click={handleMinus}>-</button> 
+                <span class="p-10"> {count} {count === 1 ? "Person" : "Personer"} </span> 
+                <button class="border-2 rounded-full w-[1.9rem]" on:click={handlePlus}>+</button> 
+            </div>
 
             <Listgroup
                 items={meny}
@@ -148,20 +155,16 @@
                     </div>
                 </div>
             </Listgroup>
+
+            <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
+                {parseFloat((price * count).toFixed(2))} kr hos Meny
+            </button>
         </Card>
 
         <Card class="lastColumn h-max ">
-            <h5 class="text-md font-bold leading-none text-gray-900 dark:text-white pb-5">
+            <h5 class="text-md font-bold text-center leading-none text-gray-900 dark:text-white pb-5">
                 Handleliste 🛒
-            </h5>
-
-            <div>
-                <button class="border-2 rounded-full w-[1.8rem]" on:click={handleMinus}>-</button> 
-                <span class="p-10"> {count} Personer </span> 
-                <button class="border-2 rounded-full w-[1.9rem]" on:click={handlePlus}>+</button> 
-            </div>
-
-            
+            </h5>            
 
             <Listgroup items={ingredients} let:item class="border-0 dark:!bg-transparent">
                 {item.name}
@@ -172,8 +175,10 @@
 
             <br>
 
-            <Button color="dark">{parseFloat((price * count).toFixed(2))} kr på Meny</Button>
+    
          </Card>
+
+   
 </div>
 
 
@@ -193,4 +198,10 @@
     }
 
 }
+
+  button:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
 </style>

@@ -28,13 +28,15 @@
   
         <!-- Button: Links to /plans -->
 </div>
+<a href="/plans">   
+<div class="flex">  
 
-<div class="flex">        
-  <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
-    Spar dritmye penger!
-  </button>
+    <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
+      Sjekk ut våre ukemenyer!
+    </button>
+
 </div>
-
+</a>   
 
 
 
