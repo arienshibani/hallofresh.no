@@ -1,171 +1,54 @@
 <script>
-    // @ts-nocheck
-    import {
-        ArrowRight,
-        ArrowLeftCircle,
-        ArrowRightCircle,
-        PlusCircle,
-        MinusCircle,
-    } from 'svelte-heros-v2';
+    import { Card } from 'flowbite-svelte';
 
-
-    import { 
-        Card, 
-        Listgroup, 
-        Checkbox 
-    } from "flowbite-svelte";
-
-    // Retrieve the recipes from the data.
-    $: ({ mealplans } = data);
+    // Retreived from +server.js load function
     export let data;
-    console.log(data)
-
-    let count = 2
-    let currentPlan = 1
-    let price = 136.42
-
-    function handlePlus() {
-		count += 1;
-        if(count >= 10){
-            // Do not allow the counter to go above 10
-            count = 10
-        }
-	}
-
-    function handleMinus() {
-		count -= 1;
-        // Do not allow the counter to go below 1
-        if(count <= 1){
-            count = 1
-        }
-	}
-
-
-    const handleMeasurementConversion = (amount, measurement) => {
-        let convertedMeasurement = {amount: amount, measurement: measurement}
-
-        if(measurement === "g"){
-            if(amount >= 1000){
-                convertedMeasurement.measurement = "kg"
-                convertedMeasurement.amount = amount / 1000
-            }
-            return convertedMeasurement
-        }
-
-        if(measurement === "kg"){
-            if(amount < 1){
-                convertedMeasurement.measurement = "g"
-                convertedMeasurement.amount = amount * 1000
-            }
-        }
-
-        return `${amount} ${measurement}`
-    } 
-
-
+    $: ({mealPlans} = data)
 </script>
 
+<h1 class="text-5xl text-center pt-16 pb-10">Ukemenyer</h1>
 
-<h1 class="text-5xl text-center pt-16 pb-5">{mealplans[0].name}</h1>
-
-<div class="flex justify-center">
-    <h2 class="text-xl text-left p-5 max-w-md"> Benytt deg av pilene og + / - knappene under for å velge mellom menyer og antall personer for å justere handlelisten. </h2>
-</div>
-
-
-<div class="grid mainContent gap-x-60 p-10">
-         <Card class="h-max justify-self-end border-none shadow-none">
-            <div class="flex justify-evenly">
-                <button class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
-                     <ArrowLeftCircle class="inline"/>
-                </button>
-                <h2 class="text-2xl text-center text-gray-900">Italiensk Uke</h2>
-                <button class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
-                    <ArrowRightCircle class="inline"/>
-                </button>
+  <!-- Search Bar #TODO: Make a functional search bar here -->
+<!-- <div class="flex justify-center p-10">
+    <form class="flex items-center w-full max-w-4xl">   
+        <label for="simple-search" class="sr-only">Søk</label>
+        <div class="relative w-full">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
             </div>
-          
-            <Listgroup
-                items={mealplans[0].dishes}
-                let:item
-                class="border-0 dark:!bg-transparent pt-5">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <a href="recipes/{item.dish}">
-                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{item.dish}</p>
-                        </a>
-                       
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                            {item.subtitle}
-                        </p>
-                    </div>
-                </div>
-            </Listgroup>
+            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500" placeholder="Søk etter oppskrifter, ingredienser eller ukemenyer" required>
+        </div>
+        <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-slate-700 rounded-lg border border-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <span class="sr-only">Søk</span>
+        </button>
+    </form>
+</div> -->
 
+<div class="flex justify-evenly flex-wrap">
+    {#each mealPlans as mealPlan}
+    <!-- Recipe items -->
+    <Card class="border-none shadow-none" padding="sm">
+        <div class="flex justify-end">
 
-            <p class="text-center text-gray-900 mt-8">Antall Personer</p>
-
-            <div class="flex justify-evenly">
-                <button on:click={handleMinus}>  
-                    <MinusCircle/>
-                </button> 
-                <span class=""> {count} {count === 1 ? "Person" : "Personer"} </span> 
-                <button on:click={handlePlus}>
-                    <PlusCircle/>
-                </button> 
-            </div>
-
-            <h1 class="text-xl text-center pt-16 text-gray-950">Prisoverslag</h1>
-
-
-            <div class="flex justify-center">
-                <h2 class="text-xs text-left pt-5 pb-5 max-w-content"> Trykk på prisoverslaget for å gå videre til leverandøren. Handlelisten din vil være ferdig utfyllt med alle varene for 2 personer. Prisoverslaget kan fravike ifra virkeligheten.</h2>
-            
-
-            </div>
-
-            <a class="items-center self-center" target="_blank" href="{mealplans[0].menyUrl}">
-                <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
-                    {parseFloat((price * count).toFixed(2))} kr hos Meny
-                </button>
+        </div>
+        <div class="flex flex-col items-center pb-4">
+          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{mealPlan.name}</h5>
+          <div class="flex mt-4 space-x-3 lg:mt-6">
+           <a href="plans/{mealPlan.mealPlanId}">     
+              <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
+                Se Ukemeny
+             </button>
             </a>
-
-        </Card>
-
-        <Card class="lastColumn h-max shadow-none rounded-sm">
-            <h5 class="text-md font-bold text-center leading-none text-gray-900 dark:text-white pb-5">
-                Handleliste 🛒
-            </h5>            
-            <Listgroup items={mealplans[0].ingredients} let:item class="border-0 dark:!bg-transparent">
-                {item.name} 
-                <div class="">
-                    <Checkbox class="m-2 checked:bg-slate-900 outline-black"/> {item.amount * count}{item.measurement} 
-                </div>
-            </Listgroup>
-            <br>    
-        </Card>
-
+          </div>
+        </div>
+      </Card>
+    {/each}
 </div>
 
 
 <style>
-    .lastColumn{
-        grid-column-end: none;
-    }
-
-    .mainContent{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (max-width: 650px) {
-    .mainContent{
-        justify-content: center;
-        grid-template-columns: none;
-    }
-
-}
-
-  button:hover{
+    button:hover{
     color: white;
     background-color: black;
     border-color: white;

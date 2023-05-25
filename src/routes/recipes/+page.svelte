@@ -1,20 +1,15 @@
 <script>
-         import { Card, MenuButton, Dropdown, DropdownItem, Avatar, Button } from 'flowbite-svelte';
-         import {
-            Bookmark,
-            Share
-    } from 'svelte-heros-v2';
+    import { Card } from 'flowbite-svelte';
 
-    // data is whatever gets returned from +page.server.js
+    // Retreived from +server.js load function
     export let data;
-
-    // Retrieve the recipes from the data.
     $: ({recipes} = data)
 </script>
 
 <h1 class="text-5xl text-center pt-16 pb-10">Oppskrifter</h1>
 
-<div class="flex justify-center p-10">
+  <!-- Search Bar #TODO: Make a functional search bar here -->
+<!-- <div class="flex justify-center p-10">
     <form class="flex items-center w-full max-w-4xl">   
         <label for="simple-search" class="sr-only">Søk</label>
         <div class="relative w-full">
@@ -28,31 +23,28 @@
             <span class="sr-only">Søk</span>
         </button>
     </form>
-</div>
+</div> -->
 
 <div class="flex justify-evenly flex-wrap">
-    {#each recipes as item}
+    {#each recipes as recipe}
+    <!-- Recipe items -->
     <Card class="border-none shadow-none" padding="sm">
         <div class="flex justify-end">
 
         </div>
         <div class="flex flex-col items-center pb-4">
-          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{item.dish}</h5>
-          <span class="text-sm text-gray-500 dark:text-gray-400">{item.subtitle}</span>
+          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{recipe.title}</h5>
+          <span class="text-sm text-gray-500 dark:text-gray-400">{recipe.subtitle}</span>
           <div class="flex mt-4 space-x-3 lg:mt-6">
-            <a href="recipes/{item.dish}">
+           <a href="recipes/{recipe.recipeId}">     
               <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
                 Se Oppskrift
              </button>
             </a>
           </div>
-
-
-
         </div>
       </Card>
     {/each}
-
 </div>
 
 

@@ -9,6 +9,6 @@ const serializeNonPOJOs = (value) => {
 export const load = async function() {
     const data = await mealplans.find({}).toArray();
     console.log("Fetched", data )
-    return { mealplans: serializeNonPOJOs(data) }
+    return { mealPlans: serializeNonPOJOs(data) }
 
 }
