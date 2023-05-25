@@ -56,9 +56,8 @@
     let count = 1;
 
     const goToMealPlan = () => {
-        goto(`/plans`)
+        goto(`/plans/${data.recipe.mealPlanId}`)
     }
-
 </script>
 
 
