@@ -1,32 +1,33 @@
 // @ts-nocheck
 import { mealplans } from "$db/mealplans";
-
-
-const serializeNonPOJOs = (value) => {
-    return structuredClone(value)
-};
-
+import { serializeNonPOJOs } from "$lib/util/serializeNonPOJOs";
+import getDatabase from "$db/mongo";
+// @ts-ignore
 
 export const load = async function({params}) {
-    // Use the URL parameter to find mealplan
-    const URLparameter = params.mealPlanId
+    try {
+        const db = await getDatabase();
 
-    const mealPlanData = await mealplans.findOne({"mealPlanId": URLparameter});
-    const allMealPlansData = await mealplans.find({}, {projection: {mealPlanId: 1, name: 1}}).toArray();
+        // Do database stuff
+        const URLparameters = params.mealPlanId
+        const mealPlanData = await db.collection('mealplans').findOne({"mealPlanId": URLparameters});
+        const allMealPlansData = await db.collection('mealplans').find({}, {projection: {mealPlanId: 1, name: 1}}).toArray()
 
-    // Find the index of the current mealplan in the Array of all meal plans.
-    const currentIndex = allMealPlansData.findIndex(el => el.mealPlanId === params.mealPlanId)
- 
-    console.log(allMealPlansData[allMealPlansData.length - 1]?.mealPlanId)
-    console.log( allMealPlansData[0]?.mealPlanId)
+        // Find the index of the current mealplan in the Array of all meal plans.
+        const currentIndex = allMealPlansData.findIndex(el => el.mealPlanId === params.mealPlanId)
+        
+        // Find the next, and previous mealplan as well for the buttons. 
+        const nextMealPlanId = allMealPlansData[currentIndex + 1]?.mealPlanId || allMealPlansData[0]?.mealPlanId // (Cycle to first if out of bounds)
+        const previousMealPlanId = allMealPlansData[currentIndex - 1]?.mealPlanId ||  allMealPlansData[allMealPlansData.length - 1]?.mealPlanId // (Cycle to last if out of bounds)
 
-    // Find the next, and previous one.
-    const nextMealPlanId = allMealPlansData[currentIndex + 1]?.mealPlanId || allMealPlansData[0]?.mealPlanId
-   
-    const previousMealPlanId = allMealPlansData[currentIndex - 1]?.mealPlanId ||  allMealPlansData[allMealPlansData.length - 1]?.mealPlanId
-    return { 
-        mealPlan: serializeNonPOJOs(mealPlanData), 
-        nextMealPlanId: nextMealPlanId,
-        previousMealPlanId: previousMealPlanId,
-    }
+        return { 
+            mealPlan: serializeNonPOJOs(mealPlanData), 
+            nextMealPlanId: nextMealPlanId,
+            previousMealPlanId: previousMealPlanId,
+        }
+
+        // Perform queries, updates, etc.
+      } catch (error) {
+        console.error('Error accessing the database:', error);
+      }
 }
