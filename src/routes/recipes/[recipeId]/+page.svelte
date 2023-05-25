@@ -112,12 +112,9 @@
 </div>
 
 <div class="flex justify-center mt-10">
-
-
     <button on:click={goToMealPlan} class="items-center rounded-sm w-fit pb-10" >
-        <p>Se denne rettens ukemeny</p><ArrowRightCircle class="inline"/> 
+        <p class="pb-5">Se denne rettens ukemeny</p><ArrowRightCircle class="inline"/> 
     </button>
- 
 
 </div>
 
