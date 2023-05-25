@@ -99,18 +99,20 @@ const handlePreviousMealPlan = () => {
                 </button> 
             </div>
 
-            <h1 class="text-xl text-center pt-16 text-gray-950">Prisoverslag</h1>
+            <h1 class="text-xl text-center pt-16 text-gray-950">Bestill denne menyen</h1>
 
 
-            <div class="flex justify-center">
-                <h2 class="text-xs text-left pt-5 pb-5 max-w-content"> Trykk på prisoverslaget for å gå videre til leverandøren. Handlelisten din vil være ferdig utfyllt med alle varene for 2 personer. Prisoverslaget kan fravike ifra virkeligheten.</h2>
-            </div>
+
 
             <a class="items-center self-center" target="_blank" href="{mealPlan.menyUrl}">
                 <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
                     {parseFloat((mealPlan.price * count).toFixed(2))} kr hos Meny
                 </button>
             </a>
+
+            <div class="flex justify-center">
+                <h2 class="text-xs text-center pt-2 pb-5 max-w-content">  Handlelisten vil være forhånds utfylt for 2 personer. Prisen over er et estimat, og kan vike ifra faktis pris</h2>
+            </div>
 
         </Card>
 
