@@ -75,7 +75,7 @@ const handlePreviousMealPlan = () => {
                 class="border-0 dark:!bg-transparent pt-5">
                 <div class="flex items-center space-x-4">
                     <div class="flex-1 min-w-0">
-                        <a href="recipes/{item.recipeId}">
+                        <a href="/recipes/{item.recipeId}">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{item.title}</p>
                         </a>
                        
@@ -108,7 +108,7 @@ const handlePreviousMealPlan = () => {
 
             <a class="items-center self-center" target="_blank" href="{mealPlan.menyUrl}">
                 <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
-                    {parseFloat((price * count).toFixed(2))} kr hos Meny
+                    {parseFloat((mealPlan.price * count).toFixed(2))} kr hos Meny
                 </button>
             </a>
 
