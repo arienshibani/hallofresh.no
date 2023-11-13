@@ -14,7 +14,7 @@
 <div class="gridsetup grid p-12 grid-cols-2 gap-4 items-center max-w-4xl mt-0 m-auto">
   <img class="max-w-4 max-h-[300px] rounded-sm" src="https://images.squarespace-cdn.com/content/53b839afe4b07ea978436183/1608506201082-GU22QYZJC5TWXRSY24RX/traditional-food-around-the-world-Travlinmad.jpg?content-type=image%2Fjpeg" alt="food that contains creme fraiche">
     <p class="pl-8 relative text-xl">
-      Velg en ukemeny som passer deg og antallet personer du vil lage mat til, og Hello Fraiche genererer handlelisten for deg automatisk.
+      Velg en ukemeny som passer deg og antallet personer du vil lage mat til, og Hallo Fresh genererer handlelisten for deg automatisk.
     </p>
 
 </div>
@@ -25,7 +25,7 @@
 
   <!-- This tag gets hidden on mobile phones in order to not mess up the grid layout -->
   <p class="pr-8 relative text-xl hideOnSmallScreens">
-    Hello Fraiche sender deg til en ferdig utfylt handlevogn hos din nærmeste dagligvare som støtter leveranser over nett, uten å ta noe som helst gebyr.
+    Hallo Fresh sender deg til en ferdig utfylt handlevogn hos din nærmeste dagligvare som støtter leveranser over nett, uten å ta noe som helst gebyr.
   </p>
 
     <template>

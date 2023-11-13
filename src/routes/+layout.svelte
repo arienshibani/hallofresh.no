@@ -11,7 +11,7 @@
         alt="Drawn by jcomp on Freepik.com"
       />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-        Hello Fraiche
+        Hallo Fresh
       </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
