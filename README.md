@@ -1,7 +1,5 @@
-# Hello Fraiche
-
-A better version hello fresh. 
-
-![image](https://github.com/arienshibani/hello-fraiche/assets/22197324/05f7080a-bb63-4d26-8df5-6eb358e415d1)
+# Mealkits are overpriced 💸
+ What if you could just buy the ingredients yourself, for half the cost. And still enjoy the luxury of not having to plan your dinner every day? 
 
 
+![image](https://github.com/arienshibani/hello-fraiche/assets/22197324/a522d4d2-c1b9-4b53-9c84-57d4f55399e2)
