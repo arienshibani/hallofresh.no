@@ -36,7 +36,7 @@
           <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{recipe.title}</h5>
           <span class="text-sm text-gray-500 dark:text-gray-400">{recipe.subtitle}</span>
           <div class="flex mt-4 space-x-3 lg:mt-6">
-           <a href="recipes/{recipe.recipeId}">     
+           <a href="recipes/{recipe.title}">     
               <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
                 Se Oppskrift
              </button>

@@ -50,23 +50,17 @@ const handlePreviousMealPlan = () => {
 </script>
 
 
-<h1 class="text-5xl text-center pt-16 pb-5">Ukemeny</h1>
+<h1 class="text-4xl text-center pt-16 pb-5">{mealPlan.name}</h1>
 
-<div class="flex justify-center pb-10">
-    <h2 class="text-xl text-center p-5 max-w-md"> Bla igjennom ukemenyer og juster for antall personer for å få prisoverslag </h2>
-</div>
+
 
 
 <div class="grid mainContent gap-x-40 p-10">
          <Card class="h-max justify-self-end border-none shadow-none">
             <div class="flex justify-evenly">
-                <button on:click={handlePreviousMealPlan} class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
-                     <ArrowLeftCircle  class="inline"/>
-                </button>
-                <h2 class="text-2xl text-center text-gray-900">{mealPlan.name}</h2>
-                <button on:click={handleNextMealPlan} class="items-center self-center  rounded-sm h-10 w-fit pr-2 pl-2" >
-                    <ArrowRightCircle  class="inline"/>
-                </button>
+
+                <h2 class="text-2xl text-center text-gray-900"></h2>
+
             </div>
           
             <Listgroup
@@ -75,7 +69,7 @@ const handlePreviousMealPlan = () => {
                 class="border-0 dark:!bg-transparent pt-5">
                 <div class="flex items-center space-x-4">
                     <div class="flex-1 min-w-0">
-                        <a href="/recipes/{item.recipeId}">
+                        <a href="/recipes/{item.title}">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{item.title}</p>
                         </a>
                        
@@ -116,9 +110,9 @@ const handlePreviousMealPlan = () => {
 
         </Card>
 
-        <Card class="lastColumn h-max shadow-none rounded-sm">
-            <h5 class="text-md font-bold text-center leading-none text-gray-900 dark:text-white pb-5">
-                Handleliste 🛒
+        <Card class="lastColumn h-max shadow-none rounded-sm mb-14">
+            <h5 class="text-md tracking-widest  text-center leading-none text-gray-900 dark:text-white pb-5">
+                HANDLELISTE 
             </h5>            
             <Listgroup items={mealPlan.ingredients} let:item class="border-0 dark:!bg-transparent">
                 {item.name} 
@@ -126,9 +120,19 @@ const handlePreviousMealPlan = () => {
                     <Checkbox class="m-2 checked:bg-slate-900 outline-black"/> {item.amount * count}{item.measurement} 
                 </div>
             </Listgroup>
-            <br>    
+            <br>
+            <br>
+            {#if mealPlan.bulkIngredients.length !== 0}
+            <h5 class="text-md  tracking-widest text-center leading-none text-gray-900 dark:text-white pb-5">
+                FRA EGET KJØLESKAP
+            </h5>
+            <Listgroup items={mealPlan.bulkIngredients} let:item class="border-0 dark:!bg-transparent">
+                {item.name} 
+            </Listgroup>
+            {/if}
         </Card>
 
+  
 </div>
 
 

@@ -25,7 +25,7 @@
 
   <!-- This tag gets hidden on mobile phones in order to not mess up the grid layout -->
   <p class="pr-8 relative text-xl hideOnSmallScreens">
-    Hallo Fresh sender deg til en ferdig utfylt handlevogn hos din nærmeste dagligvare som støtter leveranser over nett, uten å ta noe som helst gebyr.
+    Handle inn på egenhånd, eller få det på døren. Hva enn du velger, så er det billigere en hvilken som helst matkasse! 
   </p>
 
     <template>

@@ -8,7 +8,7 @@
     $: ({ recipe, mealPlan } = data);
     export let data;
 
-    console.log(data)
+    console.log(mealPlan)
 
     // Do not allow the counter to go above 10
     const handlePlus = ()  => {
@@ -30,7 +30,6 @@
         2: "Tor",
         3: "Ons"
     }
-
 
 
     const handleNextRecipe = () => {
@@ -61,20 +60,10 @@
 </script>
 
 
-
-
-<h1 class="text-5xl text-center pb-5 pt-10">{recipe.title}</h1>
+<h1 class="text-4xl text-center pb-5 pt-10">{recipe.title}</h1>
 <h1 class="text-2xl text-center  hideOnSmallScreens smallerTextOnSmallScreens">{recipe.subtitle}</h1>
 
-<div class="flex justify-center mt-10">
-    <button on:click={handlePreviousRecipe} class="items-center self-center  rounded-sm h-10 w-fit pr-16" >
-        <p>Forgje</p><ArrowLeftCircle class="inline"/> 
-    </button>
- 
-    <button on:click={handleNextRecipe} class="items-center self-center  rounded-sm h-10 w-fit pl-16" >
-        <p>Neste</p>  <ArrowRightCircle class="inline"/> 
-    </button>
-</div>
+
 
 <div class="flex justify-center flex-wrap mt-16 pb-40">
     <div class="">
@@ -101,7 +90,7 @@
     </div>
 
     <div class="flex-grow-1">
-        <h1 class="text-2xl font-bold pb-5 topPaddingOnSmallScreens" >Slik gjør du</h1>
+        <h1 class="text-2xl font-bold pb-5 topPaddingOnSmallScreens" >Fremgangsmåte</h1>
         {#each recipe.steps as cookingInstruction, index}
             <p class="text-xl p-4 max-w-lg">
                 <span class="font-bold">{index + 1 + "."}</span>
@@ -111,12 +100,7 @@
     </div>
 </div>
 
-<div class="flex justify-center mt-10">
-    <button on:click={goToMealPlan} class="items-center rounded-sm w-fit pb-10" >
-        <p class="pb-5">Se denne rettens ukemeny</p><ArrowRightCircle class="inline"/> 
-    </button>
 
-</div>
 
 
 

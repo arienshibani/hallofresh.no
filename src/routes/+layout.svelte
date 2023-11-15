@@ -8,10 +8,10 @@
       <img
         src="https://www.seekpng.com/png/full/167-1677409_crme-frache-sour-cream-transparent-background.png"
         class="mr-3 h-6 sm:h-9"
-        alt="Drawn by jcomp on Freepik.com"
+        alt="a bowl of sour creme"
       />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-        Hallo Fresh
+        HALLO<br>FRESH!
       </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
