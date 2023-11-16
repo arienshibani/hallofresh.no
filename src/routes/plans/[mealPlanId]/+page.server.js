@@ -1,16 +1,24 @@
-// @ts-nocheck
+
 import { mealplans } from "$db/mealplans";
 import { serializeNonPOJOs } from "$lib/util/serializeNonPOJOs";
 import getDatabase from "$db/mongo";
-// @ts-ignore
 
 export const load = async function({params}) {
     try {
         const db = await getDatabase();
 
         // Do database stuff
+
+
+
         const URLparameters = params.mealPlanId
-        const mealPlanData = await db.collection('mealplans').findOne({"mealPlanId": URLparameters});
+        let mealPlanData = await db.collection('mealplans').findOne({"name": URLparameters});
+        if(mealPlanData === null) {
+          let mealPlanData = await db.collection('mealplans').findOne({"mealPlanId": URLparameters});
+        }
+
+
+
         const allMealPlansData = await db.collection('mealplans').find({}, {projection: {mealPlanId: 1, name: 1}}).toArray()
 
         // Find the index of the current mealplan in the Array of all meal plans.

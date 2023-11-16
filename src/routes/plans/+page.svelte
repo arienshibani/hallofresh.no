@@ -1,9 +1,24 @@
 <script>
-    import { Card } from 'flowbite-svelte';
+  import { Card } from 'flowbite-svelte';
 
-    // Retreived from +server.js load function
-    export let data;
-    $: ({mealPlans} = data)
+  /**
+   * The meal plans data.
+   * @typedef {Object} MealPlan
+   * @property {string} name - The name of the meal plan.
+   * @property {string} description - The description of the meal plan.
+   * @property {number} price - The price of the meal plan.
+   */
+
+  /**
+   * The data object passed to the component.
+   * @typedef {Object} Data
+   * @property {MealPlan[]} mealPlans - The list of meal plans.
+   */
+
+  /** @type {Data} */
+  export let data;
+
+  $: ({mealPlans} = data)
 </script>
 
 <h1 class="text-5xl text-center pt-16 pb-10">Ukemenyer</h1>
@@ -35,7 +50,7 @@
         <div class="flex flex-col items-center pb-4">
           <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{mealPlan.name}</h5>
           <div class="flex mt-4 space-x-3 lg:mt-6">
-           <a href="plans/{mealPlan.mealPlanId}">     
+           <a href="plans/{mealPlan.name}">     
               <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
                 Se Ukemeny
              </button>
