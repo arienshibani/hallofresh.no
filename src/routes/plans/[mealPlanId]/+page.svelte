@@ -50,13 +50,14 @@ const handlePreviousMealPlan = () => {
 </script>
 
 
-<h1 class="text-4xl text-center pt-16 pb-5">{mealPlan.name}</h1>
 
 
 
 
 <div class="grid mainContent gap-x-40 p-10">
          <Card class="h-max justify-self-end border-none shadow-none">
+            <h1 class="text-slate-900 text-4xl text-center pt-16 pb-5">{mealPlan.name}</h1>
+
             <div class="flex justify-evenly">
 
                 <h2 class="text-2xl text-center text-gray-900"></h2>
@@ -67,7 +68,7 @@ const handlePreviousMealPlan = () => {
                 items={mealPlan.recipes}
                 let:item
                 class="border-0 dark:!bg-transparent pt-5">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 mt-2.5">
                     <div class="flex-1 min-w-0">
                         <a href="/recipes/{item.title}">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{item.title}</p>
@@ -81,9 +82,9 @@ const handlePreviousMealPlan = () => {
             </Listgroup>
 
 
-            <p class="text-center text-gray-900 mt-8">Antall Personer</p>
+            <p class="text-center text-gray-900 mt-8 mb-4">Antall Personer</p>
 
-            <div class="flex justify-evenly">
+            <div class="flex justify-evenly m-1">
                 <button on:click={handleMinus}>  
                     <MinusCircle/>
                 </button> 
@@ -93,7 +94,7 @@ const handlePreviousMealPlan = () => {
                 </button> 
             </div>
 
-            <h1 class="text-xl text-center pt-16 text-gray-950">Bestill denne menyen</h1>
+            <h1 class="text-xl text-center pt-16 text-gray-950">Få varene levert på døra?</h1>
 
 
 
@@ -105,12 +106,12 @@ const handlePreviousMealPlan = () => {
             </a>
 
             <div class="flex justify-center">
-                <h2 class="text-xs text-center pt-2 pb-5 max-w-content">  Handlelisten vil være forhånds utfylt for 2 personer. Prisen over er et estimat, og kan vike ifra faktis pris</h2>
+                <h2 class="text-xs text-center pt-4 pb-5 max-w-content">  Handlelisten vil være forhånds utfylt for 2 personer. Prisen over er et estimat, og kan vike ifra faktis pris</h2>
             </div>
 
         </Card>
 
-        <Card class="lastColumn h-max shadow-none rounded-sm mb-14">
+        <Card class="lastColumn h-max shadow-none rounded-sm mt-12 mb-14">
             <h5 class="text-md tracking-widest  text-center leading-none text-gray-900 dark:text-white pb-5">
                 HANDLELISTE 
             </h5>            
@@ -131,6 +132,8 @@ const handlePreviousMealPlan = () => {
             </Listgroup>
             {/if}
         </Card>
+
+        
 
   
 </div>
