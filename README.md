@@ -1,6 +1,5 @@
+# [hallofresh.no](hallofresh.no) 🥛
 
-# Mealkits are overpriced 💸
- What if you could just buy the ingredients yourself, for half the cost. And still enjoy the luxury of not having to plan your weekly dinner plan? 
+Mealkits are overpriced. Why not cut out the middleman and buy the ingredients yourself? Save money, and enjoy the luxury of shopping once a week!
 
-
-![image](https://github.com/arienshibani/hello-fraiche/assets/22197324/a522d4d2-c1b9-4b53-9c84-57d4f55399e2)
+![image](https://github.com/arienshibani/hallofresh.no/assets/22197324/02a486b3-4ea4-408a-865a-4cf1e6a105f6)
