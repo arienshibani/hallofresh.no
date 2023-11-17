@@ -106,7 +106,7 @@ const handlePreviousMealPlan = () => {
             </a>
 
             <div class="flex justify-center">
-                <h2 class="text-xs text-center pt-4 pb-5 max-w-content">  Handlelisten vil være forhånds utfylt for 2 personer. Prisen over er et estimat, og kan vike ifra faktis pris</h2>
+                <h2 class="text-xs text-center pt-4 pb-5 max-w-content">  Handlelisten blir forhåndsutfylt for 2 personer. Prisen er kun et estimat.</h2>
             </div>
 
         </Card>

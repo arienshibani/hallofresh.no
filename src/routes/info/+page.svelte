@@ -35,7 +35,7 @@
 
     <!-- This tag gets displayed on mobile phones in order to not mess up the grid layout -->
     <p class="relative text-xl hideOnLargeScreens">
-      Bestill alt du trenger direkte fra dagligvare butikken din på 1-2-3! Sammenlignet med matkasser sparer du sinnsykt med penger. Handler du varene selv sparer du enda mer!
+      Bestill alt du trenger direkte fra dagligvare butikken din på 1-2-3! Eller kjøp alt selv, så sparer du enda mer.
     </p>
 </div>
 
