@@ -28,6 +28,7 @@
     <NavLi href="/plans">Ukemenyer</NavLi>
     <NavLi href="/info">Slik fungerer det</NavLi>
     <NavLi href="/recipes">Oppskrifter</NavLi>
+    <NavLi href="https://github.com/arienshibani/hallofresh.no"><img src="gitlogo.png" class="max-h-5 pl-10" alt="github logo"></NavLi>
   </NavUl>
 </Navbar>
 <br>

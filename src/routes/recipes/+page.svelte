@@ -6,7 +6,9 @@
     $: ({recipes} = data)
 </script>
 
-<h1 class="text-5xl text-center pt-16 pb-10">Oppskrifter</h1>
+<h1 class="text-5xl text-center pt-16 pb-20"> Oppskrifter</h1>
+
+
 
   <!-- Search Bar #TODO: Make a functional search bar here -->
 <!-- <div class="flex justify-center p-10">
@@ -25,7 +27,7 @@
     </form>
 </div> -->
 
-<div class="flex justify-evenly flex-wrap">
+<div class="flex justify-evenly flex-wrap max-w-5xl m-auto" >
     {#each recipes as recipe}
     <!-- Recipe items -->
     <Card class="border-none shadow-none" padding="sm">

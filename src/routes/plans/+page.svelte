@@ -40,8 +40,8 @@
     </form>
 </div> -->
 
-<div class="flex justify-evenly flex-wrap">
-    {#each mealPlans as mealPlan}
+<div class="flex justify-evenly flex-wrap max-w-6xl m-auto" >
+  {#each mealPlans as mealPlan}
     <!-- Recipe items -->
     <Card class="border-none shadow-none" padding="sm">
         <div class="flex justify-end">
