@@ -1,5 +1,6 @@
 # [hallofresh.no](hallofresh.no) 🥛
 
-Mealkits are overpriced. Why not cut out the middleman and buy the ingredients yourself? Save money, and enjoy the luxury of shopping once a week!
+Tjeneste for de som elsker matkasser, men hater prisen 
 
-![image](https://github.com/arienshibani/hallofresh.no/assets/22197324/02a486b3-4ea4-408a-865a-4cf1e6a105f6)
+![image](https://github.com/arienshibani/hallofresh.no/assets/22197324/91a49014-4eb3-443f-9af4-0d637f63f3c5)
+
