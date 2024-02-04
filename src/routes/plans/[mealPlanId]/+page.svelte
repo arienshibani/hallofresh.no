@@ -125,7 +125,7 @@ const handlePreviousMealPlan = () => {
             <br>
             {#if mealPlan.bulkIngredients.length !== 0}
             <h5 class="text-md  tracking-widest text-center leading-none text-gray-900 dark:text-white pb-5">
-                FRA EGET KJØLESKAP
+                FRA EGET KJØKKENSKAP
             </h5>
             <Listgroup items={mealPlan.bulkIngredients} let:item class="border-0 dark:!bg-transparent">
                 {item.name} 
