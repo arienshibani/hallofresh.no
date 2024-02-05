@@ -8,7 +8,7 @@
   import { ImagePlaceholder } from 'flowbite-svelte';
 </script>
 
-<h1 class="text-5xl text-center pt-16">Sånn funker det</h1>
+<h1 class="text-5xl text-center pt-16">Sånn funker det 💡</h1>
 
 <h1 class="text-3xl text-center p-2 pt-20">1. Velg middagsplan 🍽</h1>
 <div class="gridsetup grid p-12 grid-cols-2 gap-4 items-center max-w-4xl mt-0 m-auto">

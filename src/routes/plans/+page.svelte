@@ -21,7 +21,7 @@
   $: ({mealPlans} = data)
 </script>
 
-<h1 class="text-5xl text-center pt-16 pb-10">Ukemenyer</h1>
+<h1 class="text-5xl text-center pt-16 pb-10">Ukemenyer 🗓️</h1>
 
   <!-- Search Bar #TODO: Make a functional search bar here -->
 <!-- <div class="flex justify-center p-10">
