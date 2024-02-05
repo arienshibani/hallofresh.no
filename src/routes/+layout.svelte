@@ -9,7 +9,7 @@
   } from "flowbite-svelte";
 </script>
 
-<Navbar let:hidden let:toggle style="background: rgb(255 255 255 / 70%); border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(13px);" class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
+<Navbar let:hidden let:toggle style="background: rgb(255 255 255 / 70%); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(13px);" class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
 
   <NavBrand href="/">
     <img
@@ -28,7 +28,6 @@
     <NavLi href="/plans">Ukemenyer</NavLi>
     <NavLi href="/info">Slik fungerer det</NavLi>
     <NavLi href="/recipes">Oppskrifter</NavLi>
-    <NavLi href="https://github.com/arienshibani/hallofresh.no"><img src="gitlogo.png" class="max-h-5 pl-10" alt="github logo"></NavLi>
   </NavUl>
 </Navbar>
 <br>
