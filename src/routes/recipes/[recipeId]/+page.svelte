@@ -8,8 +8,6 @@
     $: ({ recipe, mealPlan } = data);
     export let data;
 
-    console.log(mealPlan)
-
     // Do not allow the counter to go above 10
     const handlePlus = ()  => {
         count += 1; if (count >= 10) {count = 10;}
