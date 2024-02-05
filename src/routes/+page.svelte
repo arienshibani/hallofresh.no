@@ -33,7 +33,7 @@
         <div class="relative overflow-x-auto rounded-3xl shadow-2xl" >
             <table class="w-full text-left rtl:text-right text-{mediaQ}">
 
-                <thead class="text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-gray-700 uppercase bg-gradient-to-r from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 mb-96 mt-12">
                     <tr class="border-b">
                         <th scope="col" class="px-4 py-3 text-center"> </th>
                         <th scope="col" class="px-4 py-3 text-center">Hallofresh ✨</th>
@@ -46,7 +46,7 @@
                 <tbody>
                     <tr class="bg-white dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
-                            class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white"> God middag hver dag 🍽️</th>
+                            class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white"> God middag hver dag 🍽️</th>
                             <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
@@ -54,34 +54,34 @@
 
                     <tr
                         class="bg-white dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row"class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Ingen ekstragebyr ⚖️ </th>
+                        <th scope="row"class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Ingen ekstragebyr ⚖️ </th>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ❌ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                     </tr>
                     <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Ingen abonnement 🎉</th>
+                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Ingen abonnement 🎉</th>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ❌ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
-                    </tr>
-
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Bra for budsjettet 📈</th>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
                     </tr>
 
                     <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Sparer deg tid ⏰</th>
+                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Kontroll over kostnade 📈</th>
                         <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
+                        <td class="px-4 py-4 text-center"> ❌ </td>
                         <td class="px-4 py-4 text-center"> ❌ </td>
                     </tr>
 
                     <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Pris pr. porsjon 💰 </th>
+                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Sparer deg tid ⏰</th>
+                        <td class="px-4 py-4 text-center"> ✅ </td>
+                        <td class="px-4 py-4 text-center"> ✅ </td>
+                        <td class="px-4 py-4 text-center"> ❌ </td>
+                    </tr>
+
+                    <tr class="bg-white dark:bg-gray-800">
+                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Pris pr. porsjon 💰 </th>
                         <td class="px-4 py-4 text-center text-green-500">Cirka 60kr</td>
                         <td class="px-4 py-4 text-center  text-red-600"> Over 114kr</td>
                         <td class="px-4 py-4 text-center"> 🤷 </td>
@@ -96,9 +96,9 @@
         <a href="/info">
             <div class="flex">
                 <button
-                    class="m-auto border border-black border-r-4 border-b-4 rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-20"
+                    class="m-auto border border-black border-r-4 border-b-4 rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-20 hover:scale-110 transition-transform duration-300"
                 >
-                    Slik fungerer det <ArrowRight class="inline" />
+                    Slik fungerer det 💡<ArrowRight class="inline" />
                 </button>
             </div>
         </a>
