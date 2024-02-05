@@ -46,7 +46,7 @@
                 <tbody>
                     <tr class="bg-white dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
-                            class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white"> Gode mat hver dag 🍽️</th>
+                            class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white"> God middag hver dag 🍽️</th>
                             <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ✅ </td>
@@ -67,7 +67,7 @@
                     </tr>
 
                     <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Kontroll på kostnader 📈</th>
+                        <th scope="row" class="px-4 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Bra for budsjettet 📈</th>
                         <td class="px-4 py-4 text-center"> ✅ </td>
                         <td class="px-4 py-4 text-center"> ❌ </td>
                         <td class="px-4 py-4 text-center"> ❌ </td>
