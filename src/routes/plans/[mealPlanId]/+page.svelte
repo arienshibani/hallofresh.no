@@ -64,7 +64,7 @@
             class="border-0 dark:!bg-transparent pt-5"
         >
             <a href="/recipes/{item.title}">
-                <div class="flex items-center space-x-4 mt-2.5">
+                <div class="flex items-center space-x-4 mt-2.5 hover:scale-110 transition-transform duration-100">
                     <div class="flex-1 min-w-0">
                         <b>{ukedager[index]}</b>
                         <p
@@ -97,6 +97,22 @@
                 <PlusCircle />
             </button>
         </div>
+
+        <!-- #TODO: Enable this again when Meny... allows me to save more than 1 shopping list. 🫠
+
+        <h1 class="text-xl text-center pt-16 text-gray-950">Bestill denne menyen</h1>
+        
+        <a class="items-center self-center" target="_blank" href="{mealPlan.menyUrl}">
+            <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5" >
+                {parseFloat((mealPlan.price * count).toFixed(2))} kr hos Meny
+            </button>
+        </a>
+
+        <div class="flex justify-center">
+            <h2 class="text-xs text-center pt-2 pb-5 max-w-content">  Handlelisten vil være forhånds utfylt for 2 personer. Prisen over er et estimat, og kan vike ifra faktis pris</h2>
+        </div>
+        -->
+        
     </Card>
 
     <Card class="lastColumn h-max shadow-none rounded-sm mt-12 mb-14">
@@ -136,10 +152,6 @@
 </div>
 
 <style>
-    .lastColumn {
-        grid-column-end: none;
-    }
-
     .mainContent {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }

@@ -19,13 +19,13 @@
 
 </div>
 
-<h1 class="text-3xl text-center p-2 pt-10">2. Bestill råvarene 📦</h1>
+<h1 class="text-3xl text-center p-2 pt-10">2. Kjøp råvarene 📦</h1>
 
 <div class="gridsetup grid p-12 grid-cols-2 gap-4 items-center max-w-4xl mt-0 m-auto">
 
   <!-- This tag gets hidden on mobile phones in order to not mess up the grid layout -->
   <p class="pr-8 relative text-xl hideOnSmallScreens">
-    Handle inn på egenhånd, eller få det på døren. Hva enn du velger, så er det billigere en hvilken som helst matkasse! 
+    Enten du foretrekker å handle selv, eller bestiller råvarene via levering rett på døren, spiller det ingen rolle. Uansett hva du velger, er det mer kostnadseffektivt enn noen annen matkasse!
   </p>
 
     <template>
@@ -42,8 +42,8 @@
 <!-- Button: Links to /plans -->
 <a href="/plans">   
   <div class="flex">  
-      <button class="m-auto border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40" >
-        Finn din ukemeny!  <ArrowRight class="inline"/>
+      <button class="m-auto border  border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-40 hover:scale-110 transition-transform duration-300" >
+        Finn din plan! 🍽️  <ArrowRight class="inline"/>
       </button>
   </div>
 </a>   
