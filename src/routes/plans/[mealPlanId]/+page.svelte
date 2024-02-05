@@ -11,7 +11,7 @@
     // Retrieve the recipes from the data.
     $: ({ mealPlan, nextMealPlanId, previousMealPlanId } = data);
     export let data;
-    console.log(data);
+
 
     let count = 2;
     let price = 136.42; // Todo: store in DB lol
