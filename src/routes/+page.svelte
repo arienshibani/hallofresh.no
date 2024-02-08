@@ -84,7 +84,7 @@
                         <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Pris pr. porsjon 💰 </th>
                         <td class="px-4 py-4 text-center text-green-500">Cirka 60kr</td>
                         <td class="px-4 py-4 text-center  text-red-600"> Over 114kr</td>
-                        <td class="px-4 py-4 text-center"> 🤷 </td>
+                        <td class="px-4 py-4 text-center text-green-500"> Cirka 60kr </td>
                     </tr>
                 </tbody>
             </table>
