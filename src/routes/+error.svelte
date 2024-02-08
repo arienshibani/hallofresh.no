@@ -14,7 +14,7 @@
         <Li>
             Gå tilbake til <a href="/" class="link text-cyan-500">hovedsiden?</a>
         </Li>
-        <Li href="">
+        <Li>
             eller <a href="https://github.com/arienshibani/hallofresh.no/discussions" class="link text-cyan-500">kontakt oss</a>
         </Li>
     </List>
