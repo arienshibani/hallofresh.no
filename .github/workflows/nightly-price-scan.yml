@@ -22,7 +22,7 @@ jobs:
       run: npm ci
 
     - name: Run update script
-      run: node ./path/to/your/script.js
+      run: node ./scripts/price-scanner.js
       env:
         DB_URI: ${{ secrets.MONGO_URI }}
         API_KEY: ${{ secrets.KASSALAPP_API_KEY }}
