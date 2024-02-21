@@ -5,6 +5,17 @@ const mongoUri = process.env.MONGO_URI;
 let cachedDb = null;
 
 
+if(apiKey === undefined){
+  console.error('KASSALAPP_API_KEY is missing');
+  process.exit(1);
+
+}
+
+if(mongoUri === undefined){
+  console.error('MONGO_URI is missing');
+  process.exit(1);
+}
+
 // Fetch list of all ingredients from MongoDB
 const fetchListOfIngredientsFromMongoDB = async () => {
   const client = new MongoClient(mongoUri);
