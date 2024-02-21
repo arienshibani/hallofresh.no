@@ -1,8 +1,9 @@
-name: Daily Update
+name: 🥒 Ingredient price scanner 💰
 
 on:
   schedule:
     - cron:  '0 0 * * *'  # This will run the action every day at midnight
+  workflow_dispatch: # Can also be triggered manually if needed
 
 jobs:
   update:
