@@ -27,6 +27,7 @@
 		"classnames": "^2.3.2",
 		"flowbite": "^1.6.5",
 		"flowbite-svelte": "^0.36.5",
-		"mongodb": "^5.8.0"
+		"mongodb": "^5.8.0",
+		"saslprep": "^1.0.3"
 	}
 }
