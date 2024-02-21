@@ -82,14 +82,16 @@ const InitScan = async () => {
   // Wait for 10 seconds
   await new Promise(resolve => setTimeout(resolve, 5000));
 
-  // For each ingredient, check if it has an object named "data", if not, we fetch it from Kassal.app
+  // For each ingredient fetch data from Kassal.app
   // Count the number of ingredients that have been updated
   let scannedIngredients = 0;
   for (const ingredient of ingredients) {
     await refreshIngredientPriceData(ingredient);
     scannedIngredients++;
+ 
+   // Let's be nice, and wait 5 seconds between each scan to avoid rate limits 💕
+   await new Promise(resolve => setTimeout(resolve, 5000));
   }
-
   console.info(`Successfully scanned ${scannedIngredients} ingredients 👍`, new Date());
 
   // exit
