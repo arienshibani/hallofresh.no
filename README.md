@@ -30,10 +30,10 @@ The application should now be available locally via your webbrowser 👉 <http:/
 
 ## Contribute?
 
-Want to share a good recipe? Send them in as a `JSON` object and I'll add it to the database. 
+Want to share a good recipe or a weekly mealplan? Send me a link to it and I'll add it to the website.
 
 ### Example recipe object
-Depicted below is an example recipe object.
+Depicted below is an example recipe object in the database, use it as a template when populating the DB. 
 
 ```json
 {
