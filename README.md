@@ -2,6 +2,9 @@
 
 For oss som elsker matkasser 😍 men **hater prisen!** 🤬
 
+![image (2)](https://github.com/user-attachments/assets/b7c2e95b-0f8a-4964-9d49-9773c2659c85)
+
+
 ## Features
 * Hallo-fresh gir deg oppskrifter og handlelister til ukemenyer 📆 som **smaker mye og koster lite** 💰
 * Del handlelister for individuelle oppskrifter eller **hele ukemenyer** 
