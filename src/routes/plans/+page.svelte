@@ -50,7 +50,7 @@
         </div>
         <div class="flex flex-col items-center pb-4">
           <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{"#" + (index + 1) + " "}{mealPlan.name}</h5>
-            <img src="https://via.placeholder.com/150/white?text={mealPlan.name[0]}" alt="Placeholder image" class="w-40 h-40 rounded-full object-cover mt-4 mb-4" aria-hidden="true" />
+            <img src="https://placehold.co/150x150/?text={mealPlan.name[0]}" alt="Placeholder image" class="w-40 h-40 rounded-full object-cover mt-4 mb-4" aria-hidden="true" />
           <div class="flex mt-4 space-x-3 lg:mt-6">
            <a href="/plans/{mealPlan.name}">     
               <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5 hover:scale-110 transition-transform duration-300" >
