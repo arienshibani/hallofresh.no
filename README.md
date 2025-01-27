@@ -1,28 +1,41 @@
-# [hallofresh.no](hallofresh.no) 🥛
+# Hallo Fresh 🥛
 
-For oss som elsker matkasser 😍 men **hater prisen!** 🤬
+Weekly meal plan services such as HelloFresh and Adams Matkasse are pricey, so I'm making my own with tasty, budget-friendly recipes!
 
 ![image (2)](https://github.com/user-attachments/assets/b7c2e95b-0f8a-4964-9d49-9773c2659c85)
 
+## Features ✨ 
 
-## Features
-* Hallo-fresh gir deg oppskrifter og handlelister til ukemenyer 📆 som **smaker mye og koster lite** 💰
-* Del handlelister for individuelle oppskrifter eller **hele ukemenyer** 
-  * Hvorfor betale store summer for matkasser når man kan bestille rett fra daglivarens nettbutikk?
-  * Juster enkelt for antall personer 👨‍👩‍👧 og handlelisten oppdateres automagisk
-* Sammenlign prisen 📊 på din favoritt meny hos ulike daglivare butikker 🔜 **kommer snart!**
-* Bestill 🧑‍💻 alt du trenger for mat for resten av uken ved 1 tastetrykk! 🔜 **kommer snart!** 
+* Select any meal plan to get four meals (monday, to thursday) designed to use all the ingredients in that plan.
+* Scale the plan for your household size, and the shopping list adjusts automatically.
 
-## Open Source 🪄
-Kildekoden er åpen. Pull-requests er bare gøy. Tech stack:
+### Isn't the point to avoid shopping?💡
+[Meny](https://meny.no/nettbutikk/) and [Oda](https://oda.com/no/) both offer home delivery. You dont have to step foot in a grocery store unless you want
 
-* Svelte-kit / JS / Vercel / MongoDB
+## Quickstart 🚀
 
-### Bidra med oppskrifter
+* Make sure you have [Node](https://nodejs.org/en/download) installed.
 
-Send inn oppskrifter på følgende format:
+1. ✨ Clone repo `git clone https://github.com/arienshibani/hallofresh.no`
 
-```js
+2. 🏗️ Navigate into repo and install deps `npm install`
+
+3. 🔗 Hook up your database credentials. `echo 'MONGO_URI=YOUR_CONNECTION_STRING' > .env`
+    * Make sure the `.env` file gets created at the root of the repository.
+    * Ask repo admin for access if you would like to contribute.
+
+3. ⚙️ Run the app  `npm run dev -- --open`
+
+The application should now be available locally via your webbrowser 👉 <http://localhost:5173/>.
+
+## Contribute?
+
+Want to share a good recipe? Send them in as a `JSON` object and I'll add it to the database. 
+
+### Example recipe object
+Depicted below is an example recipe object.
+
+```json
 {
   "title": "Kremet Spaghetti 🍝", // Tittel på oppskriften
   "subtitle": "med sjampinjong og soltørkede tomater", // Undertekst
@@ -85,3 +98,6 @@ Send inn oppskrifter på følgende format:
 }
 ```
 
+## Roadmap 🗺️
+* [Kassal.app](https://kassal.app/) integration, for fetching prices per recipe / mealplan. 💰
+* More mealplans and recipes? 🤷‍♂️
