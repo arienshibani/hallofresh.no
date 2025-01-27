@@ -4,12 +4,13 @@ Weekly meal plan services such as [HelloFresh](https://www.hellofresh.no/) and [
 
 ![image (2)](https://github.com/user-attachments/assets/b7c2e95b-0f8a-4964-9d49-9773c2659c85)
 
-## Features ✨ 
+## Features ✨
 
 * Select any meal plan to get four meals (monday, to thursday) designed to use all the ingredients in that plan.
 * Scale the plan for your household size, and the shopping list adjusts automatically.
 
 ### Isn't the point to avoid shopping?💡
+
 [Meny](https://meny.no/nettbutikk/) and [Oda](https://oda.com/no/) both offer home delivery. You dont have to step foot in a grocery store unless you want to. [Foodora markets](https://www.foodora.no/groceries) is also an option, albeit a bit more expensive.
 
 ## Quickstart 🚀
@@ -24,15 +25,16 @@ Weekly meal plan services such as [HelloFresh](https://www.hellofresh.no/) and [
     * Make sure the `.env` file gets created at the root of the repository.
     * Ask repo admin for access if you would like to contribute.
 
-3. ⚙️ Run the app  `npm run dev -- --open`
+4. ⚙️ Run the app  `npm run dev -- --open`
 
 The application should now be available locally via your webbrowser 👉 <http://localhost:5173/>.
 
-## Contribute?
+## Contributing 🤝
 
-Want to share a good recipe? Send them in as a `JSON` object and I'll add it to the database. 
+Want to share a good recipe or do you have a meal plan you'd like to share? Feel free to contribute by [sending it to me](mailto:aaari94@gmail.com?subject=Hallofresh feedback)!
 
 ### Example recipe object
+
 Depicted below is an example recipe object.
 
 ```json
@@ -49,10 +51,10 @@ Depicted below is an example recipe object.
     "Tilsett matfløte 🥛 og vann 💧 i pannen og kok opp mens du rører rundt. Tilsett cirka 1 håndfull spinat 🥬 og la det synke sammen i sausen.",
     "Når spaghettien 🌾 er ferdigkokt, heller du av vannet og tilsetter sausen. Server gjerne med maldonsalt og/eller parmesan ost hvis du har det."
   ],
-  // Liste over ingredienser. 
+  // Liste over ingredienser.
   "recipeIngredients": [
     {
-      "name": "Spagetti 🌾", 
+      "name": "Spagetti 🌾",
       "amount": 100,
       "measurement": "g"
     },
@@ -99,5 +101,6 @@ Depicted below is an example recipe object.
 ```
 
 ## Roadmap 🗺️
+
 * [Kassal.app](https://kassal.app/) integration, for fetching prices per recipe / mealplan. 💰
 * More mealplans and recipes? 🤷‍♂️
