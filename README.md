@@ -1,6 +1,6 @@
 # Hallo Fresh 🥛
 
-Weekly meal plan services such as HelloFresh and Adams Matkasse are pricey, so I'm making my own with tasty, budget-friendly recipes!
+Weekly meal plan services such as [HelloFresh](https://www.hellofresh.no/) and [Adams](https://www.adamsmatkasse.no/) are expensive. So I'm compiling my own list of tasty, budget-friendly recipes to help plan my weekly meals.
 
 ![image (2)](https://github.com/user-attachments/assets/b7c2e95b-0f8a-4964-9d49-9773c2659c85)
 
@@ -10,7 +10,7 @@ Weekly meal plan services such as HelloFresh and Adams Matkasse are pricey, so I
 * Scale the plan for your household size, and the shopping list adjusts automatically.
 
 ### Isn't the point to avoid shopping?💡
-[Meny](https://meny.no/nettbutikk/) and [Oda](https://oda.com/no/) both offer home delivery. You dont have to step foot in a grocery store unless you want
+[Meny](https://meny.no/nettbutikk/) and [Oda](https://oda.com/no/) both offer home delivery. You dont have to step foot in a grocery store unless you want to. [Foodora markets](https://www.foodora.no/groceries) is also an option, albeit a bit more expensive.
 
 ## Quickstart 🚀
 
