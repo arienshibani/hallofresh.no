@@ -1,5 +1,5 @@
 <script>
-  import { Card } from 'flowbite-svelte';
+  import { Card } from "flowbite-svelte";
 
   /**
    * The meal plans data.
@@ -18,12 +18,12 @@
   /** @type {Data} */
   export let data;
 
-  $: ({mealPlans} = data)
+  $: ({ mealPlans } = data);
 </script>
 
-<h1 class="text-5xl text-center pt-16 pb-10">Ukemenyer 🍽️</h1>
+<h1 class="text-5xl text-center pt-16 pb-10 font-bold">Ukemenyer 🗓️</h1>
 
-  <!-- Search Bar #TODO: Make a functional search bar here -->
+<!-- Search Bar #TODO: Make a functional search bar here -->
 <!-- <div class="flex justify-center p-10">
     <form class="flex items-center w-full max-w-4xl">   
         <label for="simple-search" class="sr-only">Søk</label>
@@ -40,32 +40,37 @@
     </form>
 </div> -->
 
-
-<div class="flex justify-evenly flex-wrap max-w-6xl m-auto" >
+<div class="flex justify-evenly flex-wrap max-w-6xl m-auto">
   {#each mealPlans as mealPlan, index}
     <!-- Recipe items -->
     <Card class="border-none shadow-none" padding="sm">
-        <div class="flex justify-end">
-
+      <div class="flex justify-end"></div>
+      <div class="flex flex-col items-center pb-4">
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+          {"#" + (index + 1) + " "}{mealPlan.name}
+        </h5>
+        <img
+          src="https://placehold.co/150x150/?text={mealPlan.name[0]}"
+          alt="Placeholder image"
+          class="w-40 h-40 rounded-full object-cover mt-4 mb-4"
+          aria-hidden="true"
+        />
+        <div class="flex mt-4 space-x-3 lg:mt-6">
+          <a href="/plans/{mealPlan.name}">
+            <button
+              class="items-center self-center border border-black border-r-4 border-b-4 rounded-sm h-10 w-fit pr-4 pl-4 m-5 hover:scale-110 transition-transform duration-300"
+            >
+              Se Ukemeny
+            </button>
+          </a>
         </div>
-        <div class="flex flex-col items-center pb-4">
-          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{"#" + (index + 1) + " "}{mealPlan.name}</h5>
-            <img src="https://placehold.co/150x150/?text={mealPlan.name[0]}" alt="Placeholder image" class="w-40 h-40 rounded-full object-cover mt-4 mb-4" aria-hidden="true" />
-          <div class="flex mt-4 space-x-3 lg:mt-6">
-           <a href="/plans/{mealPlan.name}">     
-              <button class="items-center self-center border border-black border-r-4 border-b-4  rounded-sm h-10 w-fit pr-4 pl-4 m-5 hover:scale-110 transition-transform duration-300" >
-                Se Ukemeny
-             </button>
-            </a>
-          </div>
-        </div>
-      </Card>
-    {/each}
+      </div>
+    </Card>
+  {/each}
 </div>
 
-
 <style>
-    button:hover{
+  button:hover {
     color: white;
     background-color: black;
     border-color: white;

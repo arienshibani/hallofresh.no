@@ -1,108 +1,165 @@
 <script>
     import { ArrowRight } from "svelte-heros-v2";
-    
+    import { Card } from "flowbite-svelte";
+
+    // Retreived from +server.js load function
+    export let data;
+    $: ({ recipes } = data);
 
     let onPhone;
     let mediaQ = "xl";
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
         onPhone = window.matchMedia("(min-width: 600px)");
         mediaQ = onPhone.matches ? "xl" : "xs";
     }
 
     const message = "%c https://github.com/arienshibani %c";
-            const style1 = "background: linear-gradient(to right, red, orange);";
-            const style2 = "color: white; font-weight: bold;";
-            console.log(message, style1, style2);
-    </script>
+    const style1 = "background: linear-gradient(to right, red, orange);";
+    const style2 = "color: white; font-weight: bold;";
 
-<section class="bg-white dark:bg-gray-900 mb-96 mt-12">
-    <div
-        class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
-    >
-        <h1
-            class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-        >
-            GO'MIDDAG!
-        </h1>
-        <p
-            class="text-lg mb-16 font-normal text-gray-800 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
-        >
-            For deg som elsker matkasser 😍 <br><b>men hater prisen!</b> 🤬 
-        </p>
+    const recipeCount = data.recipes.length;
+    const mealPlanCount = data.mealplans.length;
+</script>
 
-        <div class="relative overflow-x-auto rounded-3xl shadow-2xl" >
-            <table class="w-full text-left rtl:text-right text-{mediaQ}">
-
-                <thead class="text-gray-700 uppercase bg-gradient-to-r from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 mb-96 mt-12">
-                    <tr class="border-b">
-                        <th scope="col" class="px-4 py-3 text-center"> </th>
-                        <th scope="col" class="px-4 py-3 text-center">Hallofresh ✨</th>
-                        <th scope="col" class="px-4 py-3 text-center"> Matkasser 📦</th>
-                        <th scope="col" class="px-4 py-3 text-center">Butikken 🛒</th>
-
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr class="bg-white dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row"
-                            class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white"> God middag hver dag 🍽️</th>
-                            <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                    </tr>
-
-                    <tr
-                        class="bg-white dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row"class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Ingen ekstragebyr ⚖️ </th>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                    </tr>
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Ingen abonnement 🎉</th>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                    </tr>
-
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Kontroll over kostnader 📈</th>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                    </tr>
-
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Sparer deg tid ⏰</th>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ✅ </td>
-                        <td class="px-4 py-4 text-center"> ❌ </td>
-                    </tr>
-
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-4 py-4 font-medium pl-12 text-gray-900 whitespace-nowrap dark:text-white">Pris pr. porsjon 💰 </th>
-                        <td class="px-4 py-4 text-center text-green-500">Cirka 60kr</td>
-                        <td class="px-4 py-4 text-center  text-red-600"> Over 114kr</td>
-                        <td class="px-4 py-4 text-center text-green-500"> Cirka 60kr </td>
-                    </tr>
-                </tbody>
-            </table>
-
+<section class="bg-white dark:bg-gray-900 mb-96 mt-28">
+    <div class="flex flex-col items-center justify-center w-full p-4">
+        <div class="text-4xl md:text-6xl font-bold text-black text-center">
+            Hva <span class="text-orange-400">faen</span> skal du
         </div>
 
-
-
-        <a href="/info">
-            <div class="flex">
-                <button
-                    class="m-auto border border-black border-r-4 border-b-4 rounded-sm h-10 w-fit pr-4 pl-4 mt-20 mb-20 hover:scale-110 transition-transform duration-300"
-                >
-                    Slik fungerer det 💡<ArrowRight class="inline" />
-                </button>
-            </div>
-        </a>
+        <div class="text-4xl md:text-6xl font-bold relative text-center">
+            <span
+                class="bg-orange-300 absolute -bottom-1 h-[35%] w-[101%] mr-[1px]"
+            ></span>
+            <span class="text-black relative"> ha til middag idag?</span>
+        </div>
     </div>
+
+    <div class="pt-111 pb-6 pt-12">
+        <div class="flex items-start justify-center">
+            <div
+                class="h-[200px] w-[400px] bg-white rounded-l-xl flex flex-col items-start p-5"
+            >
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg
+                            class="w-5 h-5 text-black mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"
+                            ></path></svg
+                        >
+                        <span class="text-black">
+                            {mealPlanCount} Ukemenyer og {recipeCount} oppskrifter</span
+                        >
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg
+                            class="w-5 h-5 text-black mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"
+                            ></path></svg
+                        >
+                        <span class="text-black"
+                            >Velg selv hvor og når du handler inn</span
+                        >
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg
+                            class="w-5 h-5 text-black mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"
+                            ></path></svg
+                        >
+                        <span class="text-black"
+                            >Spar penger, ingen måndlige avgifter
+                        </span>
+                    </div>
+                    <div>
+                        <a href="/info">
+                            <div class="flex pt-5">
+                                <button
+                                    class="mx-auto border border-black border-r-4 border-b-4 rounded-sm h-10 w-fit pr-4 pl-4 hover:scale-110 transition-transform duration-300 mt-2"
+                                >
+                                    Hvordan funker det? <ArrowRight
+                                        class="inline"
+                                    />
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="col-span-2 flex flex-col justify-endrounded-lg p-4 h-[300px] overflow-hidden relative group"
+    >
+        <div
+            class="absolute -top-12 left-1/2 -translate-x-1/2 w-60 h-16 z-0 blur-[90px] opacity-0 group-hover:opacity-100 transition duration-700"
+        ></div>
+        <div
+            class="flex-grow relative h-full flex justify-center items-center space-x-12"
+        >
+            <div class="absolute -left-4 h-full w-16 to-transparent z-10"></div>
+            <div class="absolute -right-4 h-full w-16 z-10"></div>
+            <div class="flex justify-end space-x-12 animate-carousel">
+                <!-- Randomized recipe cards in carousel -->
+                {#each recipes.sort(() => Math.random() - 0.5) as recipe}
+                    <a href="/recipes/{recipe.title}">
+                        <Card
+                            class="shrink-0 w-64 h-32 border-none shadow-none"
+                        >
+                            <h3 class="text-lg font-bold">{recipe.title}</h3>
+                            <p class="text-sm">{recipe.subtitle}</p>
+                        </Card>
+                    </a>
+                {/each}
+            </div>
+            <style>
+                @keyframes carousel {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(
+                            calc(-112px * 4)
+                        ); /* Move exactly one set (4 items) */
+                    }
+                }
+
+                .animate-carousel {
+                    animation: carousel 30s linear infinite;
+                }
+
+                .hover .animate-carousel {
+                    animation-play-state: paused;
+                }
+            </style>
+        </div>
+    </div>
+
+    <div
+        class="absolute -top-12 left-1/2 -translate-x-1/2 w-60 h-16 bg-blue-600 z-0 blur-[90px] opacity-0 group-hover:opacity-100 transition duration-700"
+    ></div>
 </section>
 
 <style>
